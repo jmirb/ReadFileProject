@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class FindString {
 	
-	public static final String stringToFind = "Jul 28 10:00:00";
+	public static final String stringToFind = "Jul 28 10:";
 	public static final String nameFile =  "/var/log/system.log" ;
 
 
@@ -14,17 +14,22 @@ public class FindString {
 	
 		BufferedReader br = ReadFile.readFileWithBuffer(nameFile);
 		
-		String line;
+		
 		int count = 0;
 		
-		do {
+		String line = br.readLine();
+		
+		while( line != null ) {
 			
+			boolean isDateValid = line.startsWith(stringToFind);
+			if (isDateValid) {
+				System.out.println(line);
+				System.out.println(count);
+			}
 			line = br.readLine();
-			System.out.println(line);
 			count++;
 			
-		}while ( line != null || count < 10); 
-		
+		}
 		return 0;
 
 	}
