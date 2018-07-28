@@ -15,12 +15,15 @@ public class FindString {
 		BufferedReader br = ReadFile.readFileWithBuffer(nameFile);
 		
 		String line;
+		int count = 0;
 		
 		do {
+			
 			line = br.readLine();
 			System.out.println(line);
+			count++;
 			
-		}while ( line != null);
+		}while ( line != null || count < 10); 
 		
 		return 0;
 
