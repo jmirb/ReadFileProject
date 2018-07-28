@@ -7,19 +7,17 @@ import java.io.FileReader;
 
 public class ReadFile {
 	
-	static File file;
+	private File file;
 	
-	private ReadFile(String nameFile){
+	public ReadFile(String nameFile){
 		file = new File(nameFile);
 	}
 	
 	/*
 	 * 
 	 */
-	public static BufferedReader readFileWithBuffer(final String nameFile) throws FileNotFoundException{
-		
-		new ReadFile(nameFile);
-		
+	public BufferedReader readFileWithBuffer() throws FileNotFoundException{
+				
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		
 		return br;
