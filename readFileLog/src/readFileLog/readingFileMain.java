@@ -4,12 +4,15 @@ import java.io.IOException;
 
 public class readingFileMain {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 		
-		String dateStr = "Jul 28 10:";
-		ReadFile rf = new ReadFile(args[0].toString());
-		
-		FindInLogFile.findLinesInLog(dateStr, rf);
+		try {
+			FindString.countString();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 

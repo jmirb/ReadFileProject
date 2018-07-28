@@ -7,25 +7,21 @@ import java.io.FileReader;
 
 public class ReadFile {
 	
-	private File file;
+	static File file;
 	
-	public ReadFile(String nameFile){
+	private ReadFile(String nameFile){
 		file = new File(nameFile);
 	}
 	
 	/*
 	 * 
 	 */
-	public BufferedReader readFileWithBuffer() throws FileNotFoundException,IllegalArgumentException{
+	public static BufferedReader readFileWithBuffer(final String nameFile) throws FileNotFoundException{
 		
-		BufferedReader br;
+		new ReadFile(nameFile);
 		
-			if (file!=null) {
-				br = new BufferedReader(new FileReader(file));
-			}else {
-				throw new IllegalArgumentException("The file has not been initialised");
-			}
-			
+		BufferedReader br = new BufferedReader(new FileReader(file));
+		
 		return br;
 	}
 
